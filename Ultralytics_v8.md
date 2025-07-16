@@ -10,7 +10,7 @@ YOLOv8은 기존 YOLO 계열이 지향해온 **"실시간성과 정확도의 균
 
 - **Anchor-Free Detection**: 복잡한 anchor box 설정을 제거하여 학습 안정성과 확장성을 강화
 - **Task-agnostic 설계**: 객체 탐지뿐만 아니라 세분화(Segmentation), Pose Estimation까지 단일 아키텍처로 지원
-- **Export 및 Deployment 중심 설계**: 다양한 하드웨어 환경에 바로 배포 가능한 구조 (ONNX, TensorRT 등)
+- **Export 및 Deployment 중심 설계**: 다양한 하드웨어 환경에 바로 배포 가능한 구조 `(ONNX, TensorRT 등)`
 - **모듈화와 단순성**: `PyTorch` + `ultralytics` 라이브러리 기반으로 모든 단계가 일관된 인터페이스를 가짐
 
 ---
