@@ -24,7 +24,7 @@ YOLOv8의 전체 구조는 크게 세 부분으로 나뉩니다: `Backbone`, `Ne
 YOLOv8의 backbone은 기존 YOLOv5의 CSPDarknet 구조를 탈피하여 **경량화된 custom convolution block**을 사용합니다. 이는 연산량(GFLOPs)을 줄이면서도 정확도 손실을 최소화하는 방향으로 설계되었습니다.
 
 - ReLU 대신 SiLU (Swish) 활성화 함수 사용
-- Conv → BN → Activation 구조의 반복
+- `Conv` → `BN` → `Activation` 구조의 반복
 - 다양한 버전 존재: `n`, `s`, `m`, `l`, `x`
 
 ### 2.2 Neck (다중 스케일 피처 통합)
