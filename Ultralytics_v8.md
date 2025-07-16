@@ -121,6 +121,110 @@ model.export(format="coreml")
 
 ---
 
+# 7. 📘 YOLO 핵심 용어 정리 (YOLOv8 기준)
+
+본 문서는 YOLO(You Only Look Once) 객체 탐지 모델을 학습하거나 활용하는 사용자들을 위해, 자주 등장하는 핵심 용어를 쉽게 이해할 수 있도록 정리한 용어집입니다.
+
+---
+
+## 7.1. 📦 Bounding Box (바운딩 박스)
+- **정의**: 이미지 내 객체를 감싸는 직사각형 영역
+- **표현 방식**:
+  - `[x_center, y_center, width, height]`: YOLO 포맷 (정규화됨)
+  - `[x1, y1, x2, y2]`: 코너 포맷
+- **예시**: 자동차를 감싸는 박스를 출력 → `[0.53, 0.44, 0.12, 0.18]`
+
+---
+
+## 7.2. 🎯 Objectness Score
+- **정의**: 바운딩 박스 내에 객체가 존재할 확률 (0~1)
+- **의의**: 객체 탐지 정확도에 중요한 역할
+- **YOLO에서는**: class confidence × objectness score = 최종 confidence
+
+---
+
+## 7.3. 🧠 Class Confidence
+- **정의**: 객체가 특정 클래스(예: person, dog, car 등)일 확률
+- **활용**: Softmax 또는 Sigmoid를 통해 각 클래스에 대한 확률 출력
+
+---
+
+## 7.4. 🔗 Anchor vs Anchor-Free
+- **Anchor**: 사전에 정의된 다양한 크기와 비율의 박스를 기준으로 예측
+- **Anchor-Free**: YOLOv8은 anchor를 사용하지 않고 center-based 방식으로 예측
+
+---
+
+## 7.5. 📐 IoU (Intersection over Union)
+- **정의**: 예측 박스와 실제 박스의 겹친 정도를 측정하는 지표
+\[
+IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}}
+\]
+- **값 범위**: 0 (겹침 없음) ~ 1 (완전 일치)
+- **활용**: NMS에서 박스 선택, 평가 지표 mAP 계산 등
+
+---
+
+## 7.6. 🔥 NMS (Non-Maximum Suppression)
+- **정의**: 겹치는 박스 중 가장 확률이 높은 것만 남기고 나머지를 제거
+- **과정**:
+  1. Confidence 순 정렬
+  2. 가장 높은 박스 선택
+  3. 나머지 박스와 IoU 계산 → 일정 임계값 초과 시 제거
+- **역할**: 중복 박스 제거로 정확한 예측 유지
+
+---
+
+## 7.7. 📊 mAP (mean Average Precision)
+- **정의**: 모델이 얼마나 정확하게 객체를 탐지했는지 평가하는 지표
+- **종류**:
+  - `mAP@0.5`: IoU 0.5 이상에서 평균 정확도
+  - `mAP@0.5:0.95`: IoU 0.5부터 0.95까지 평균 (정밀한 성능 평가)
+
+---
+
+## 7.8. 🧮 GIoU / CIoU / DIoU Loss
+- **정의**: 박스의 예측과 정답 차이를 계산하는 거리 기반 손실 함수들
+- **종류**:
+  - GIoU: 단순 IoU에 더해 박스 위치 관계 고려
+  - DIoU: 중심 거리까지 고려
+  - CIoU: 중심 거리 + 크기 차이 + aspect ratio까지 고려
+
+---
+
+## 7.9. 🧪 Inference vs Training
+- **Training**: 라벨이 있는 데이터로 모델을 학습시키는 단계
+- **Inference**: 학습된 모델로 새로운 이미지를 예측하는 단계
+
+---
+
+## 7.10. 🧱 Backbone / Neck / Head
+- **Backbone**: 특징 추출 네트워크 (ex. CSPDarknet, EfficientNet)
+- **Neck**: 다양한 레벨의 피처 맵을 연결 (ex. PAN, FPN, BiFPN)
+- **Head**: 최종 예측 (bounding box + class + confidence)
+
+---
+
+## 7.11. 🚀 Batch Size / Epoch / Learning Rate
+- **Batch Size**: 한 번에 처리하는 이미지 수
+- **Epoch**: 전체 데이터를 한 번 학습한 횟수
+- **Learning Rate**: 가중치를 얼마나 빠르게 갱신할지 결정
+
+---
+
+## 7.12. 💡 Prompt Engineering (YOLOv8-CLI)
+- YOLOv8은 CLI에서 `yolo task=detect mode=predict model=yolov8n.pt ...` 같은 방식으로 추론 가능
+
+---
+
+## 📝 참고 링크
+- [YOLOv8 공식 문서](https://docs.ultralytics.com/)
+- [COCO 데이터셋 클래스](https://github.com/ultralytics/yolov5/blob/master/data/coco.yaml)
+- [NMS 개념 설명 (YouTube)](https://www.youtube.com/watch?v=IyT8SLXbph0)
+
+---
+
+
 ## 📚 7. 참고 문헌 및 학술 자료
 
 - YOLOv4: Optimal Speed and Accuracy of Object Detection ([Bochkovskiy et al., 2020](https://arxiv.org/abs/2004.10934))
