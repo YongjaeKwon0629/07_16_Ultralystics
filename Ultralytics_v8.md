@@ -225,7 +225,7 @@ IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}}
 ---
 
 
-## 📚 7. 참고 문헌 및 학술 자료
+## 📚 8. 참고 문헌 및 학술 자료
 
 - YOLOv4: Optimal Speed and Accuracy of Object Detection ([Bochkovskiy et al., 2020](https://arxiv.org/abs/2004.10934))
 - YOLOv7: Trainable bag-of-freebies sets new state-of-the-art ([Wang et al., 2022](https://arxiv.org/abs/2207.02696))
