@@ -10,7 +10,7 @@ Ultralytics는 최신 YOLO (You Only Look Once) 시리즈를 개발하고 유지
 - ✅ 가장 널리 사용되는 최신 YOLO 모델
 - ✅ PyTorch 기반 통합 프레임워크
 - ✅ 사전 학습 모델, 커맨드라인, API 모두 지원
-- [📄 Ultralytics_v8](./Ultralytics_v8.md)
+- [📄 Ultralytics_YOLO_v8](./Ultralytics_v8.md)
 
 ---
 
@@ -18,14 +18,14 @@ Ultralytics는 최신 YOLO (You Only Look Once) 시리즈를 개발하고 유지
 - ⚠️ 비공식/실험적 버전일 수 있음
 - ⚠️ PyPI 또는 깃허브에 등록된 커뮤니티 버전
 - ⚠️ 사용 시 주의 필요
-- [📄 Ultralytics_v11](./Ultralytics_v11.md)
+- [📄 Ultralytics_YOLO_v11](./Ultralytics_v11.md)
 
 ---
 
 ### 🔹 YOLOv12
 - ⚠️ 공식 릴리즈는 아님 (가상 시나리오 또는 테스트용일 가능성)
 - ⚠️ 커스텀 아키텍처/성능 테스트용으로 사용될 수 있음
-- [📄 Ultralytics_v12](./Ultralytics_v12.md)
+- [📄 Ultralytics_YOLO_v12](./Ultralytics_v12.md)
 
 ---
 
