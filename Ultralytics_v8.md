@@ -6,7 +6,7 @@ YOLOv8은 Ultralytics에 의해 2023년에 공개된 객체 탐지(Object Detect
 
 ## 📌 1. YOLOv8 개요 및 철학
 
-YOLOv8은 기존 YOLO 계열이 지향해온 **"실시간성과 정확도의 균형"**을 유지하면서도 다음과 같은 철학적 설계를 기반으로 합니다:
+YOLOv8은 기존 YOLO 계열이 지향해온 **"실시간성과 정확도의 균형"** 을 유지하면서도 다음과 같은 철학적 설계를 기반으로 합니다:
 
 - **Anchor-Free Detection**: 복잡한 anchor box 설정을 제거하여 학습 안정성과 확장성을 강화
 - **Task-agnostic 설계**: 객체 탐지뿐만 아니라 세분화(Segmentation), Pose Estimation까지 단일 아키텍처로 지원
