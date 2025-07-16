@@ -66,12 +66,14 @@ YOLOv8의 Head는 **Anchor-Free Decoupled Head**로, 다음을 예측합니다:
 ## ⚙️ 4. 설치 및 사용법
 
 ### 4.1 설치
+  
 ```
 pip install ultralytics
 ```
 
 ### 4.2 추론 예시
-``
+
+```
 from ultralytics import YOLO
 model = YOLO("yolov8n.pt")
 results = model("image.jpg")
